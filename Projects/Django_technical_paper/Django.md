@@ -60,5 +60,8 @@ Class:
 Classes in python act as a blueprint based on which objects are created. A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by their class) for modifying their state.
 
 
-Reference:
-[on_delete](https://medium.com/@inem.patrick/django-database-integrity-foreignkey-on-delete-option-db7d160762e4)
+## Reference:
+- [on_delete](https://medium.com/@inem.patrick/django-database-integrity-foreignkey-on-delete-option-db7d160762e4)
+- [fields](https://docs.djangoproject.com/en/4.0/ref/models/fields/)
+- [validators](https://www.geeksforgeeks.org/custom-field-validations-in-django-models/)
+- [Class vs modules](https://www.pythonpool.com/python-class-vs-module/)
