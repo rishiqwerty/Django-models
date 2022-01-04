@@ -8,7 +8,7 @@ Models.py
 Cascade emulates the SQL constraint of ON DELETE CASCADE. Whenever the referenced object (post) is deleted, the objects referencing it (comments) are deleted as well. This behaviour is a reasonable default and makes sense for most relationships — for this one as well.
 
 Let's see in this example what on_delete cascade do:
-- I had created two models post and comments. Here post_id is foreign key for comments model refering to id of post model. Also the on_delete is set to CASCADE.  
+- I have created two models post and comments. Here post_id is foreign key for comments model refering to id of post model. Also the on_delete is set to CASCADE.  
 ![models-img](img/1.png)
 - Now here are those two tables of Post & Comments I had already added some datas in these tables.  
 ![models-img](img/Screenshot%20from%202022-01-04%2011-23-18.png)
@@ -19,8 +19,8 @@ Let's see in this example what on_delete cascade do:
 
 
 Apart from CASCADE we also have the following options:
-- PROTECT: This prevents referenced onjects from being deleted if it already has an object referencing it in the database. Put simply, Django will prevent a post from deletion if it already has comments.
-- SET_NULL: THis option is only available when we have set the null option on foreignkey field set to True. When we use this option, and delete a post, it is going to leave the comments in the database without deleting it.
+- PROTECT: This prevents referenced objects from being deleted if it already has an object referencing it in the database. Put simply, Django will prevent a post from deletion if it already has comments.
+- SET_NULL: This option is only available when we have set the null option on foreignkey field set to True. When we use this option, and delete a post, it is going to leave the comments in the database without deleting it.
 - SET_DEFAULT: This requires a default value. When we delete a post comments are automatically assigned to default post we had set.
 - SET: This is similar to SET_DEFAULT, but it also allows us to set value of foreign key to value passed in SET, or a callable we have defined and passed to it as an argument.
 - DO_NOTHING: As the name implies it does nothing when a referenced object is deleted. Our comments are still referencing posts that do not exist, causing data integrity errors.
@@ -52,13 +52,23 @@ There are some builtin validators too, like URLvalidator, RegexValidator,validat
 
 ## Difference between Python module and Python classes
 
-Modules:
-Modules in Python are files with a .py extension using which we can reuse elements inside that file. When we create a python program, the program may contain inside it functions, variables, and even classes.
-If we want to reuse the same piece of function code or the same class, we can import that entire file as a module into another program.
 
 Class:
 Classes in python act as a blueprint based on which objects are created. A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by their class) for modifying their state.
 
+![class](img/Screenshot%20from%202022-01-04%2012-41-12.png)
+
+Output:
+![class](img/Screenshot%20from%202022-01-04%2012-41-41.png)
+
+Modules:
+Modules in Python are files with a .py extension using which we can reuse elements inside that file. When we create a python program, the program may contain inside it functions, variables, and even classes.
+If we want to reuse the same piece of function code or the same class, we can import that entire file as a module into another program.
+
+
+![module](img/Screenshot%20from%202022-01-04%2012-45-20.png)
+Output:
+![img](img/Screenshot%20from%202022-01-04%2012-42-03.png)
 
 ## Reference:
 - [on_delete](https://medium.com/@inem.patrick/django-database-integrity-foreignkey-on-delete-option-db7d160762e4)
